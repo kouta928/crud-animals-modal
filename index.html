@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Testador API Animals</title>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-12 titulo text-center">
+                    <a href="index.html"><h1>Teste aqui a API Animals</h1></a>
+                </div>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 col-sm-12">
+                <!-- Botão Pesquisar -->
+    <button type="button" class="btn w-100 botao" data-bs-toggle="modal" data-bs-target="#pesquisarModal">
+        Pesquisar
+    </button>
+    
+    <!-- Modal Pesquisar -->
+    <div class="modal fade" id="pesquisarModal" tabindex="-1" aria-labelledby="pesquisarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="pesquisarModalLabel">Pesquisa por ID</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center p-5 text-center busca" id="Search">
+                    <h4 class="titulo-elementos">Pesquisar Animal: </h4>
+
+                        <form action="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control " name="idSearch" id="idSearch" placeholder="ID">
+                                        <label for="">ID</label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <button type="submit" class="btn mt-2 botaoElemento" id="searchID">Buscar</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    <div class="row">
+                        <div class="col">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Espécie</th>
+                                        <th>Cor</th>
+                                        <th>Tamanho</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablebody">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <!-- Botão Listar -->
+        <button type="button" class="btn w-100 botao" data-bs-toggle="modal" data-bs-target="#ListarModal" id="bt-List">
+            Listar
+        </button>
+  <!-- Modal -->
+  <div class="modal fade" id="ListarModal" tabindex="-1" aria-labelledby="ListarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ListarModalLabel">Lista</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row justify-content-center p-5 text-center lista" id="List">
+                <div class="col">
+                    <table class="table table-striped tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Espécie</th>
+                                <th>Cor</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableList">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <!-- Botão Adicionar -->
+    <button type="button" class="btn w-100 botao" data-bs-toggle="modal" data-bs-target="#adicionaModal" id="bt-Add">
+        Adicionar
+    </button>
+    <!-- Modal Adicionar-->
+    <div class="modal fade" id="adicionaModal" tabindex="-1" aria-labelledby="adicionaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="adicionaModalLabel">Adicionar Animal: </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center p-5 text-center adiciona">
+                    <div class="col-4">
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="nomeAdd">Nome</label>
+                                <input type="text" class="form-control" name="nomeAdd" id="nomeAdd" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="especieAdd">Espécie</label>
+                                <input type="text" class="form-control" name="especieAdd" id="especieAdd" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="corAdd">Cor</label>
+                                <input type="text" class="form-control" name="corAdd" id="corAdd" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tamanhoAdd">Tamanho</label>
+                                <input type="text" class="form-control" name="tamanhoAdd" id="tamanhoAdd" placeholder="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn botaoElemento" id="btnAdd">Adicionar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <!-- Botão Deletar -->
+        <button type="button" class="btn w-100 botao" data-bs-toggle="modal" data-bs-target="#deletaModal" id="bt-Del">
+            Deletar
+        </button>
+        
+        <!-- Modal Deletar-->
+        <div class="modal fade" id="deletaModal" tabindex="-1" aria-labelledby="deletaModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deletaModalLabel">Deletar Animal: </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center p-5 text-center deleta">
+                        <div class="col-4">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <div class="mb-3">
+                                            <label for="idSearchDelete">ID</label>
+                                            <input type="number" class="form-control" name="idSearchDelete" id="idSearchDelete">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn mt-2 botaoElemento" id="btnDelete">Deletar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <!-- <button class="btn w-100 botao" id="bt-Update">Atualizar</button> -->
+
+                <!-- Button trigger modal -->
+<button type="button" class="btn w-100 botao" data-bs-toggle="modal" data-bs-target="#atualizarModal">
+    Atualizar
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="atualizarModal" tabindex="-1" aria-labelledby="atualizarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="atualizarModalLabel">Atualizar Animal:</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row justify-content-center p-5 text-center atualiza">
+                <div class="col-4">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="buscaId">ID</label>
+                            <input type="number" class="form-control" name="buscaId" id="buscaId">
+                        </div>
+                        <div class="mb-3">
+                            <label for="atualizaNome">Nome</label>
+                            <input type="text" class="form-control" name="atualizaNome" id="atualizaNome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="atualizaEspecie">Espécie</label>
+                            <input type="text" class="form-control" name="atualizaEspecie" id="atualizaEspecie">
+                        </div>
+                        <div class="mb-3">
+                            <label for="atualizaCor">Cor</label>
+                            <input type="text" class="form-control" name="atualizaCor" id="atualizaCor">
+                        </div>
+                        <div class="mb-3">
+                            <label for="atualizaTamanho">Tamanho</label>
+                            <input type="text" class="form-control" name="atualizaTamanho" id="atualizaTamanho">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn botaoElemento" id="btnAtualizar">Atualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div>
+        </div>
+
+        
+        <!-- atualiza -->
+        <!-- <div class="row justify-content-center p-5 text-center elemento atualiza">
+                <h4 class="titulo-elementos">Atualizar Animal: </h4>
+                <div class="col-4">
+                    <form action="">
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control" name="buscaId" id="buscaId">
+                            <label for="buscaId">ID</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="atualizaNome" id="atualizaNome">
+                            <label for="atualizaNome">Nome</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="atualizaEspecie" id="atualizaEspecie">
+                            <label for="atualizaEspecie">Espécie</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="atualizaCor" id="atualizaCor">
+                            <label for="atualizaCor">Cor</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="atualizaTamanho" id="atualizaTamanho">
+                            <label for="atualizaTamanho">Tamanho</label>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn botaoElemento" id="btnPut">Atualizar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+             -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 spacer">
+        </div>
+
+      <footer class="text-center text-white">
+        <div class="p-3 bg-black">
+         <h6>Feito por: Bruno Chiavenato</h6>
+        </div>
+      </footer>
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
